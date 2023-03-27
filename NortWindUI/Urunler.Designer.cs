@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewUrunler = new System.Windows.Forms.DataGridView();
             this.buttonGuncelle = new System.Windows.Forms.Button();
             this.comboBoxtedarikciler = new System.Windows.Forms.ComboBox();
@@ -42,14 +43,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.numericFiyat = new System.Windows.Forms.NumericUpDown();
             this.numericMiktar = new System.Windows.Forms.NumericUpDown();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUrunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericFiyat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMiktar)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewUrunler
             // 
             this.dataGridViewUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUrunler.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridViewUrunler.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewUrunler.Location = new System.Drawing.Point(0, 172);
             this.dataGridViewUrunler.Name = "dataGridViewUrunler";
@@ -181,6 +186,21 @@
             this.numericMiktar.Size = new System.Drawing.Size(100, 22);
             this.numericMiktar.TabIndex = 22;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(98, 28);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.silToolStripMenuItem.Text = "SİL";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
             // Urunler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -206,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUrunler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericFiyat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMiktar)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +248,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown numericFiyat;
         private System.Windows.Forms.NumericUpDown numericMiktar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
     }
 }

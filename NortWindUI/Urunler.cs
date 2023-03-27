@@ -70,5 +70,11 @@ namespace NortWindUI
             comboBoxKatad.SelectedValue = dataGridViewUrunler.CurrentRow.Cells["KategoriID"].Value;
             comboBoxtedarikciler.SelectedValue = dataGridViewUrunler.CurrentRow.Cells["TedarikciID"].Value;
         }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            urn.Sil(Convert.ToInt32(dataGridViewUrunler.CurrentRow.Cells["UrunID"].Value));
+              
+        }
     }
 }

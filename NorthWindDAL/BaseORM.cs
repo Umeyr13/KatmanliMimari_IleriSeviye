@@ -52,7 +52,7 @@ namespace NorthWindDAL
         public DataTable Listele()
         {
 
-            SqlDataAdapter adp = new SqlDataAdapter(String.Format("{0}Listesi",Tipgetir.Name),Tools.Baglanti);
+            SqlDataAdapter adp = new SqlDataAdapter(string.Format("{0}Listesi",Tipgetir.Name),Tools.Baglanti);
             adp.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             adp.Fill(dt);
@@ -61,7 +61,14 @@ namespace NorthWindDAL
 
         public bool Sil(int id)
         {
-            throw new NotImplementedException();
+            T nesne = Activator.CreateInstance<T>();//t tipi bu aşamada belli olmadığı içi bu şekilde örnekledi. T nesne = new T() olmuyor.
+            SqlCommand komut = new SqlCommand(string.Format("{0}Sil",Tipgetir.Name),Tools.Baglanti);
+            komut.CommandType = CommandType.StoredProcedure;
+            PropertyInfo property = Tipgetir.GetProperty("IdentityColumn");
+            komut.Parameters.AddWithValue(property.GetValue(nesne).ToString(), id);
+            //  komut.Parameters.AddWithValue(property.GetValue(Tipgetir.Name).ToString(),id); BEn denedim tipgetir ile
+            return Tools.BaglanExec(komut);
+            
         }
     }
 }

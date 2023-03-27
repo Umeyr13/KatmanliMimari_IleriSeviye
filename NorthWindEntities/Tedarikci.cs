@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace NorthWindEntities
 {
-    public class Tedarikci
+    public class Tedarikci:EntityBase
     {
         public int TedarikciId { get; set; }
         public string SirketAdi  { get; set; }
 
+        public override string IdentityColumn { get { return "TedarikciId"; } }
     }
 }

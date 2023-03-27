@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NorthWindEntities
 {
-    public abstract class EntityBase
+    public abstract class EntityBase//tüm entitiy ler bunu miras alsın.implement et.
     {
         public abstract string IdentityColumn { get; }
     }
